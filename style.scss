@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Shadows+Into+Light&display=swap');
+
+$baseColor: #724c87;
+
+body { 
+    margin: 0;
+    background-color: adjust-color($color: $baseColor, $hue: -20, $saturation: 0%, $lightness: 40%, $alpha: 1.0);
+}
+
+#date {
+    line-height: 2.75em;
+    vertical-align: middle;
+    text-align: center;
+    text-shadow: 0 0 4px rgba(255, 190, 190, 0.700);
+    font-size: 2em;
+    background: linear-gradient(90deg,
+        #af8d98 0%,
+        #936391 50%,
+        #724c87 50%,
+        #5a749f 75%,
+        #6093bb 100%) 100% / 200%;
+    text-transform: uppercase;
+    font-family: 'Shadows Into Light', cursive;
+    color: rgb(255, 255, 255, 0.7);
+    transition: background-position 1s;
+    user-select: none;
+}
+
+#pill-tasks {
+    display: flex;
+    flex-flow: column nowrap;
+    font-family: 'Architects Daughter', cursive;
+
+    label {
+        display: flex;
+        padding-left: 35px;
+        font-size: 1.5em;
+        block-size: 2em;
+        user-select: none;
+        align-items: center;
+        transition: all 1s;
+    }
+
+    label.checked {
+        text-decoration: line-through;
+        transform: translateX(-20px);
+        filter: opacity(0.5);
+    }
+
+    input {
+        margin: 0;
+        margin-left: 10px;
+        appearance: none;
+        block-size: 1.75em;
+        inline-size: 1.75em;
+        background: url(uncheck.svg) center / contain no-repeat;
+        outline: none;
+    }
+
+    input:checked {
+        background: url(uncheck.svg) center / contain no-repeat,
+                    url(check.svg) center / 15px no-repeat;
+    }
+}
